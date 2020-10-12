@@ -45,7 +45,7 @@ public class stackClass {
         obj.push(2);
         obj.push(3);
         System.out.println("The top element is :" + obj.peek());
-        System.out.println(obj.pop());
+        System.out.println("We have removed :" + obj.pop());
         System.out.println("The top element is :" + obj.peek());
         System.out.println("Is stack empty:" + obj.inEmpty());
         System.out.println("Is stack full:" + obj.isFull());
