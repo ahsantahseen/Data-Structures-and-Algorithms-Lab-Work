@@ -39,6 +39,16 @@ class StackDS {
 public class stackClass {
 
     public static void main(String[] args) {
+        StackDS obj = new StackDS(4);
+        obj.push(0);
+        obj.push(1);
+        obj.push(2);
+        obj.push(3);
+        System.out.println("The top element is :" + obj.peek());
+        System.out.println(obj.pop());
+        System.out.println("The top element is :" + obj.peek());
+        System.out.println("Is stack empty:" + obj.inEmpty());
+        System.out.println("Is stack full:" + obj.isFull());
 
     }
 }
