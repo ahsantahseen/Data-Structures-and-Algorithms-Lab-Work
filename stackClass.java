@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 class StackDS {
     private int maxSize;
     private int[] stackArray;
@@ -12,6 +14,18 @@ class StackDS {
 
         this.charTop = -1;
 
+    }
+
+    public void reverseArrayNew(String x) {
+        StackDS stackObj = new StackDS(x.length());
+
+        for (int i = 0; i <= x.length() - 1; i++) {
+            stackObj.push(x.charAt(i));
+        }
+        for (int i = 0; i <= x.length() - 1; i++) {
+
+            System.out.println(((char) stackObj.pop()));
+        }
     }
 
     public void charArray(int size) {
@@ -92,5 +106,6 @@ public class stackClass {
         obj.pushChar('a');
         obj.pushChar('n');
         obj.reverseArray();
+        obj.reverseArrayNew("AHSAN");
     }
 }
