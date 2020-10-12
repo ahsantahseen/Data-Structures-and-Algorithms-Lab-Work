@@ -10,9 +10,16 @@ class StackDS {
 
     }
 
-    public void push(int j) {
+    public void push(int item) {
         top++;
-        stackArray[top] = j;
+        stackArray[top] = item;// item wll be pushed to 0 then 1 the 2 and so on...
+    }
+
+    public int pop() {
+        int old_top = top;
+        top--;
+        return stackArray[old_top];
+
     }
 }
 
