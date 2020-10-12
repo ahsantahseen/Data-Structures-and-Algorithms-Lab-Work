@@ -26,6 +26,14 @@ class StackDS {
         return stackArray[top];
     }
 
+    public boolean inEmpty() {
+        return (top == -1);
+    }
+
+    public boolean isFull() {
+        return (maxSize - 1 == top);
+    }
+
 }
 
 public class stackClass {
