@@ -14,6 +14,7 @@ public class arrayClass {
     public void printArray() {
         for (int i = 0; i < count; i++) {
             System.out.println(ArrayItems[i]);
+
         }
     }
 
