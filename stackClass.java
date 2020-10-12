@@ -1,10 +1,10 @@
 class StackDS {
-    private int maxLen;
+    private int maxSize;
     private int[] stackArray;
     private int top;
 
     public StackDS(int size) {
-        this.maxLen = size;
+        this.maxSize = size;
         this.stackArray = new int[size];
         this.top = -1;// because when we add it will be 0 and array starting element index is 0
 
@@ -21,6 +21,11 @@ class StackDS {
         return stackArray[old_top];
 
     }
+
+    public int peek() {
+        return stackArray[top];
+    }
+
 }
 
 public class stackClass {
