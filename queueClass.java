@@ -25,6 +25,11 @@ class QueueDS {
     }
 
     public void enqueue(employee employeeOBJ) {
+        if (backPointer == queueArray.length) {
+            employee[] newArray = new employee[queueArray.length * 2];
+            System.arraycopy(queueArray, 0, newArray, 0, queueArray.length);
+            queueArray = newArray;
+        }
 
         queueArray[backPointer] = employeeOBJ;
         backPointer++;
