@@ -30,4 +30,22 @@ class QueueDS {
         backPointer++;
     }
 
+    public void print() {
+        for (int i = frontPointer; i < backPointer; i++) {
+            System.out.println(queueArray[i]);
+        }
+    }
+}
+
+class main {
+    public static void main(String[] args) {
+        QueueDS obj = new QueueDS(5);
+        employee ali = new employee(1, "Ali  ", "Khan");
+        employee ahsan = new employee(2, "Ahsan", "Khan");
+        employee ameen = new employee(3, "Ameen", "Khan");
+        obj.enqueue(ali);
+        obj.enqueue(ahsan);
+        obj.enqueue(ameen);
+        obj.print();
+    }
 }
