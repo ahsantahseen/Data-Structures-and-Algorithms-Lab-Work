@@ -25,9 +25,7 @@ class QueueDS {
     }
 
     public void enqueue(employee employeeOBJ) {
-        if (backPointer == queueArray.length) {
 
-        }
         queueArray[backPointer] = employeeOBJ;
         backPointer++;
     }
