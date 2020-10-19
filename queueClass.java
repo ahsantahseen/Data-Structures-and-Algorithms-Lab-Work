@@ -40,17 +40,30 @@ class QueueDS {
             System.out.println(queueArray[i]);
         }
     }
+
+    public void sizeOfQueue() {
+        System.out.println("SIZE OF QUEUE IS:" + queueArray.length);
+    }
+
+    public int size() {
+        return backPointer - frontPointer;
+    }
 }
 
 class main {
     public static void main(String[] args) {
-        QueueDS obj = new QueueDS(5);
+        QueueDS obj = new QueueDS(4);
         employee ali = new employee(1, "Ali  ", "Khan");
         employee ahsan = new employee(2, "Ahsan", "Khan");
         employee ameen = new employee(3, "Ameen", "Khan");
+        employee bilal = new employee(4, "Bilal", "Khan");
+        employee test = new employee(5, "Test", "GUY");
         obj.enqueue(ali);
         obj.enqueue(ahsan);
         obj.enqueue(ameen);
+        obj.enqueue(bilal);
+        obj.enqueue(test);
         obj.print();
+        obj.sizeOfQueue();
     }
 }
