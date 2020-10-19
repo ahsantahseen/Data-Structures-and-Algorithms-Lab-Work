@@ -1,6 +1,5 @@
 public class arrayClass {
     private int[] ArrayItems, AnotherArrayItems;
-
     private int count;
     private int anotherCount;
 
