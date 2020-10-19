@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 class employee {
     private int id;
     private String firstName;
@@ -47,6 +49,20 @@ class QueueDS {
 
     public int size() {
         return backPointer - frontPointer;
+    }
+
+    public employee dequeue() {
+        if (size() == 0) {
+            throw new NoSuchElementException();
+        }
+        employee employeeObj = queueArray[frontPointer];
+        queueArray[frontPointer] = null;
+        frontPointer++;
+        if (size() == 0) {
+            frontPointer = 0;
+            backPointer = 0;
+        }
+        return employeeObj;
     }
 }
 
