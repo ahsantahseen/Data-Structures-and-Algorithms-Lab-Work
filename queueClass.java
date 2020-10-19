@@ -90,6 +90,6 @@ class main {
         obj.sizeOfQueue();
         obj.dequeue();
         obj.print();
-        System.out.println(obj.peek());
+        System.out.println("\nPEEEKING FRONT:"+obj.peek());
     }
 }
