@@ -51,6 +51,13 @@ class QueueDS {
         return backPointer - frontPointer;
     }
 
+    public employee peek() {
+        if (size() == 0) {
+            throw new NoSuchElementException();
+        }
+        return queueArray[frontPointer];
+    }
+
     public employee dequeue() {
         if (size() == 0) {
             throw new NoSuchElementException();
@@ -81,5 +88,8 @@ class main {
         obj.enqueue(test);
         obj.print();
         obj.sizeOfQueue();
+        obj.dequeue();
+        obj.print();
+        System.out.println(obj.peek());
     }
 }
