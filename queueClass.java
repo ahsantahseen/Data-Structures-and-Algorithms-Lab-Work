@@ -13,15 +13,23 @@ class employee {
         return ("Employe:" + id + "|| " + firstName + "  ||" + lastName);
     }
 }
-class QueueDS{
+
+class QueueDS {
     private employee[] queueArray;
     private int frontPointer;
     private int backPointer;
 
-    public QueueDS(int size){
-        this.queueArray=new employee[size];
+    public QueueDS(int size) {
+        this.queueArray = new employee[size];
 
-    }   
-    
+    }
+
+    public void enqueue(employee employeeOBJ) {
+        if (backPointer == queueArray.length) {
+
+        }
+        queueArray[backPointer] = employeeOBJ;
+        backPointer++;
+    }
 
 }
