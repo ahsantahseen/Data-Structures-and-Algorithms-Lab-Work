@@ -71,25 +71,30 @@ class QueueDS {
         }
         return employeeObj;
     }
+
 }
 
 public class queueClass {
     public static void main(String[] args) {
-        QueueDS obj = new QueueDS(4);
-        employee ali = new employee(1, "Ali  ", "Khan");
-        employee ahsan = new employee(2, "Ahsan", "Khan");
-        employee ameen = new employee(3, "Ameen", "Khan");
-        employee bilal = new employee(4, "Bilal", "Khan");
-        employee test = new employee(5, "Test", "GUY");
-        obj.enqueue(ali);
-        obj.enqueue(ahsan);
-        obj.enqueue(ameen);
-        obj.enqueue(bilal);
-        obj.enqueue(test);
+        QueueDS obj = new QueueDS(5);
+        employee emp[] = new employee[5];
+        emp[0] = new employee(1, "Ali", "Tahseen");
+        emp[1] = new employee(2, "Ameen", "Tahseen");
+        emp[2] = new employee(3, "Bilal", "Tahseen");
+        emp[3] = new employee(4, "Ahsan", "Tahseen");
+        emp[4] = new employee(5, "Test", "Subject");
+        for (int i = 0; i < emp.length; i++) {
+            obj.enqueue(emp[i]);
+        }
         obj.print();
         obj.sizeOfQueue();
-        obj.dequeue();
+        System.out.println("\nPEEEKING FRONT:" + obj.peek());
+
+        for (int i = 0; i < emp.length; i++) {
+            obj.dequeue();
+        }
         obj.print();
-        System.out.println("\nPEEEKING FRONT:"+obj.peek());
+        System.out.println("\n PEEKING FRONT:" + obj.peek());
+        obj.sizeOfQueue();
     }
 }
