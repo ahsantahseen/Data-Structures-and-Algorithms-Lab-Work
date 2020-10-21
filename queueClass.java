@@ -73,7 +73,7 @@ class QueueDS {
     }
 }
 
-class main {
+public class queueClass {
     public static void main(String[] args) {
         QueueDS obj = new QueueDS(4);
         employee ali = new employee(1, "Ali  ", "Khan");
