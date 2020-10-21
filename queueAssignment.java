@@ -84,6 +84,15 @@ class runner {
         for (int i = 0; i < students.length; i++) {
             obj.enqueue(students[i]);
         }
+        /*
+         * Another Method (not sure about this tho) for(int =0;i<students.length;i++){
+         * obj.dequeue(); }
+         * 
+         * 
+         * 
+         */
+        obj.printQueue();
+        obj.ClearQueue();
         obj.printQueue();
     }
 }
