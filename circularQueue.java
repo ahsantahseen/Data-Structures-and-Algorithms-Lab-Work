@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 class Employee {
     private String fullname;
     private int ID;
@@ -43,10 +45,56 @@ public class circularQueue {
         }
         queueArray[BackPointer] = employee;
         if (BackPointer < queueArray.length - 1) {
-        BackPointer++;
-        }
-        else{
-            BackPointer=0;
+            BackPointer++;
+        } else {
+            BackPointer = 0;
         }
     }
+
+    public Employee Dequeue() {
+        if (size() == 0) {
+            throw new NoSuchElementException();
+        }
+        Employee employee = queueArray[FrontPointer];
+        queueArray[FrontPointer] = null;
+        FrontPointer++;
+        if (size() == 0) {
+            FrontPointer = 0;
+            BackPointer = 0;
+        } else if (FrontPointer == queueArray.length) {
+            FrontPointer = 0;
+        }
+        return employee;
+
+    }
+
+    public void PrintQueue() {
+        if (FrontPointer <= BackPointer) {
+            for (int i = 0; i < BackPointer; i++) {
+                System.out.println(queueArray[i]);
+            }
+        } else {
+            for (int i = FrontPointer; i < queueArray.length; i++) {
+                System.out.println(queueArray[i]);
+            }
+            for (int i = 0; i < BackPointer; i++) {
+                System.out.println(queueArray[i]);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        circularQueue cQ = new circularQueue(4);
+        Employee ali = new Employee("ali", 1);
+        Employee ameen = new Employee("ameen", 2);
+        Employee bilal = new Employee("bilal", 3);
+        Employee ahsan = new Employee("ahsan", 4);
+        cQ.Enqueue(ali);
+        cQ.Enqueue(ameen);
+        cQ.Enqueue(bilal);
+        cQ.Enqueue(ahsan);
+        cQ.PrintQueue();
+        System.out.println("SIZE OF ARRAY:" + cQ.size());
+    }
+
 }
