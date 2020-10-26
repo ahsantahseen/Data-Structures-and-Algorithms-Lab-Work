@@ -1,11 +1,11 @@
 import java.util.NoSuchElementException;
 
-class employee {
+class employeeDS {
     private int id;
     private String firstName;
     private String lastName;
 
-    public employee(int id, String fname, String lname) {
+    public employeeDS(int id, String fname, String lname) {
         this.id = id;
         this.firstName = fname;
         this.lastName = lname;
@@ -17,18 +17,18 @@ class employee {
 }
 
 class QueueDS {
-    private employee[] queueArray;
+    private employeeDS[] queueArray;
     private int frontPointer;
     private int backPointer;
 
     public QueueDS(int size) {
-        this.queueArray = new employee[size];
+        this.queueArray = new employeeDS[size];
 
     }
 
-    public void enqueue(employee employeeOBJ) {
+    public void enqueue(employeeDS employeeOBJ) {
         if (backPointer == queueArray.length) {
-            employee[] newArray = new employee[queueArray.length * 2];
+            employeeDS[] newArray = new employeeDS[queueArray.length * 2];
             System.arraycopy(queueArray, 0, newArray, 0, queueArray.length);
             queueArray = newArray;
         }
@@ -51,18 +51,18 @@ class QueueDS {
         return backPointer - frontPointer;
     }
 
-    public employee peek() {
+    public employeeDS peek() {
         if (size() == 0) {
             throw new NoSuchElementException();
         }
         return queueArray[frontPointer];
     }
 
-    public employee dequeue() {
+    public employeeDS dequeue() {
         if (size() == 0) {
             throw new NoSuchElementException();
         }
-        employee employeeObj = queueArray[frontPointer];
+        employeeDS employeeObj = queueArray[frontPointer];
         queueArray[frontPointer] = null;
         frontPointer++;
         if (size() == 0) {
@@ -77,12 +77,12 @@ class QueueDS {
 public class queueClass {
     public static void main(String[] args) {
         QueueDS obj = new QueueDS(5);
-        employee emp[] = new employee[5];
-        emp[0] = new employee(1, "Ali", "Tahseen");
-        emp[1] = new employee(2, "Ameen", "Tahseen");
-        emp[2] = new employee(3, "Bilal", "Tahseen");
-        emp[3] = new employee(4, "Ahsan", "Tahseen");
-        emp[4] = new employee(5, "Test", "Subject");
+        employeeDS emp[] = new employeeDS[5];
+        emp[0] = new employeeDS(1, "Ali", "Tahseen");
+        emp[1] = new employeeDS(2, "Ameen", "Tahseen");
+        emp[2] = new employeeDS(3, "Bilal", "Tahseen");
+        emp[3] = new employeeDS(4, "Ahsan", "Tahseen");
+        emp[4] = new employeeDS(5, "Test", "Subject");
         for (int i = 0; i < emp.length; i++) {
             obj.enqueue(emp[i]);
         }

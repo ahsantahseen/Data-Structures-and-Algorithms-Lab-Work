@@ -32,7 +32,7 @@ public class circularQueue {
         }
     }
 
-    public void Enqueue(Employee employee) {
+    public void CEnqueue(Employee employee) {
         if (size() == queueArray.length - 1) {
             int numOfitems = size();
             Employee[] newArray = new Employee[queueArray.length * 2];
@@ -40,6 +40,7 @@ public class circularQueue {
             System.arraycopy(queueArray, FrontPointer, newArray, 0, queueArray.length - FrontPointer);
             // It will copy from 0 to the back pointer from the orignal queue//
             System.arraycopy(queueArray, 0, newArray, queueArray.length - FrontPointer, BackPointer);
+            queueArray = newArray;
             FrontPointer = 0;
             BackPointer = numOfitems;
         }
@@ -83,16 +84,19 @@ public class circularQueue {
         }
     }
 
+}
+
+class tester {
     public static void main(String[] args) {
         circularQueue cQ = new circularQueue(4);
         Employee ali = new Employee("ali", 1);
         Employee ameen = new Employee("ameen", 2);
         Employee bilal = new Employee("bilal", 3);
         Employee ahsan = new Employee("ahsan", 4);
-        cQ.Enqueue(ali);
-        cQ.Enqueue(ameen);
-        cQ.Enqueue(bilal);
-        cQ.Enqueue(ahsan);
+        cQ.CEnqueue(ali);
+        cQ.CEnqueue(ameen);
+        cQ.CEnqueue(bilal);
+        cQ.CEnqueue(ahsan);
         cQ.PrintQueue();
         System.out.println("SIZE OF ARRAY:" + cQ.size());
     }
