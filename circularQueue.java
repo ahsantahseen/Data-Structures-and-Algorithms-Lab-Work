@@ -93,10 +93,17 @@ class tester {
         Employee ameen = new Employee("ameen", 2);
         Employee bilal = new Employee("bilal", 3);
         Employee ahsan = new Employee("ahsan", 4);
+        Employee ahmed = new Employee("ahmed", 5);
         cQ.CEnqueue(ali);
         cQ.CEnqueue(ameen);
         cQ.CEnqueue(bilal);
         cQ.CEnqueue(ahsan);
+
+        cQ.PrintQueue();
+        System.out.println("SIZE OF ARRAY:" + cQ.size());
+        cQ.Dequeue();
+        cQ.Dequeue();
+
         cQ.PrintQueue();
         System.out.println("SIZE OF ARRAY:" + cQ.size());
     }
