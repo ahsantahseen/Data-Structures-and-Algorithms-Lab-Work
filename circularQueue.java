@@ -98,6 +98,7 @@ class tester {
         cQ.CEnqueue(ameen);
         cQ.CEnqueue(bilal);
         cQ.CEnqueue(ahsan);
+        cQ.CEnqueue(ahmed);
 
         cQ.PrintQueue();
         System.out.println("SIZE OF ARRAY:" + cQ.size());
