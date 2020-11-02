@@ -55,6 +55,7 @@ class mainC {
         obj.insertFirst(111);
         obj.insertFirst(1111);
         obj.InsertLast(5);
+        obj.deleteFirst();
         obj.displayList();
 
     }
