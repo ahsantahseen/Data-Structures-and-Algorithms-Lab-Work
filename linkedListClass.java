@@ -2,7 +2,7 @@
 class Node {
     public int Data;
     public Node next = null;
-
+    
     public void LengthOfLinkList(Node node) {
         int len = 0;
         while (node != null) {

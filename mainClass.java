@@ -4,12 +4,13 @@ public class mainClass {
     obj.insertIntoArray(3);
     obj.insertIntoArray(4);
     obj.insertIntoArray(534);
-    obj.insertIntoArray(677);
+    obj.insertIntoArray(7);
     obj.insertIntoAnotherArray(3);
     obj.insertIntoAnotherArray(4);
+    obj.insertIntoAnotherArray(7);
+    obj.insertIntoAnotherArray(13);
     obj.printArray();
     obj.sizeOfArray();
-    obj.removeAt(1);
     obj.printArray();
     obj.sizeOfArray();
     obj.largestNumberInArray();

@@ -22,8 +22,8 @@ class Student {
 class QueueStr {
 
     private Student queueArray[];
-    private int frontPointer;
-    private int backPointer;
+    public int frontPointer;
+    public int backPointer;
 
     public QueueStr(int size) {
         this.queueArray = new Student[size];
@@ -91,8 +91,26 @@ class runner {
          * 
          * 
          */
+
         obj.printQueue();
         obj.ClearQueue();
         obj.printQueue();
+        System.out.println();
+        for(int i=0;i<students.length;i++){
+            obj.enqueue(students[i]);
+        }
+        obj.enqueue(students[1]);
+        obj.enqueue(students[3]);
+        
+        obj.printQueue();
+        System.out.println("FRONT POINTER:"+obj.frontPointer);
+        
+        System.out.println("BACK POINTER:"+obj.backPointer);
+        obj.dequeue();
+        System.out.println();
+        obj.printQueue();
+        System.out.println("FRONT POINTER:"+obj.frontPointer);
+        
+        System.out.println("BACK POINTER:"+obj.backPointer);
     }
 }

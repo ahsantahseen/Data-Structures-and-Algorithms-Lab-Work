@@ -47,15 +47,15 @@ public class arrayClass {
         System.out.println("The Size Of Array Is:" + count);
     }
 
-    public void removeAt(int index) {
-        if (index < 0 || index >= count) {
-            throw new IllegalArgumentException();
+        public void removeAt(int index) {
+            if (index < 0 || index >= count) {
+                throw new IllegalArgumentException();
+            }
+            for (int i = index; i < count; i++) {
+                ArrayItems[i] = ArrayItems[i + 1];
+            }
+            count--;
         }
-        for (int i = index; i < count; i++) {
-            ArrayItems[i] = ArrayItems[i + 1];
-        }
-        count--;
-    }
 
     public int indexOf(int item) {
         for (int i = 0; i < count; i++) {
