@@ -1,7 +1,7 @@
 class Search {
     public static void main(String[] args) {
         int arr1[] = { 1, 22, 43, 12, 4, 14, 155 };
-        int a = linearseach(arr1, 4);
+        int a = linearseach(arr1, 0);
         if (a == -1) {
             System.out.println("NUMBER NOT FOUND");
         } else {
