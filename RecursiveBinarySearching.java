@@ -2,8 +2,8 @@ public class RecursiveBinarySearching {
 
     public static void main(String[] args) {
         RecursiveBinarySearching obj = new RecursiveBinarySearching();
-        long[] items = new long[] { 1, 2, 3, 4, 10, 24, 12 };
-        obj.RecursiveBinarySearchingMethod(items, 0, items.length - 1, 24);
+        long[] items = new long[] { 1, 2, 3, 4, 10, 12, 24 }; // use sorted arrays
+        obj.RecursiveBinarySearchingMethod(items, 0, items.length - 1, 1);
     }
 
     public void RecursiveBinarySearchingMethod(long a[], int start, int end, int number) {
@@ -13,9 +13,9 @@ public class RecursiveBinarySearching {
         }
         if (a[mid] == number) {
             System.out.println("NUMBER " + number + " found at postion " + mid);
-        } else if (number > a[mid]) {
+        } else if (number > a[mid]) { // Go to Left Side
             RecursiveBinarySearchingMethod(a, mid + 1, end, number);
-        } else {
+        } else { // Go to Right Side
             RecursiveBinarySearchingMethod(a, start, mid - 1, number);
         }
     }
