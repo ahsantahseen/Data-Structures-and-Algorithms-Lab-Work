@@ -214,6 +214,42 @@ public class binarySearchTree {
         printNodesAtDistance(rootNode.rightChild, distance - 1);
     }
 
+    public boolean equals(binarySearchTree Tree) {
+        if (Tree == null) {
+            return false;
+
+        } else {
+            return equals(rootNode, Tree.rootNode);
+        }
+    }
+
+    private boolean equals(TreeNode first, TreeNode second) {
+        if (first == null && second == null) {
+            return true;
+        }
+        // Using Preorder
+        if (first != null & second != null) {
+            return first.key == second.key && equals(first.leftChild, second.leftChild)
+                    && equals(first.rightChild, second.rightChild);
+        }
+        return false;
+    }
+
+    public boolean isBinarySearchTree() {
+        return isBinarySearchTree(rootNode, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private boolean isBinarySearchTree(TreeNode rootNode, int min, int max) {
+        if (rootNode == null) {
+            return false;
+        }
+        if (rootNode.key < min || rootNode.key > max) {
+            return false;
+        }
+        return (isBinarySearchTree(rootNode.leftChild, min, rootNode.key - 1)
+                && isBinarySearchTree(rootNode.rightChild, rootNode.key + 1, max));
+    }
+
     public static void main(String[] args) {
         binarySearchTree bst = new binarySearchTree();
         bst.addNode(100, "GTX 1050");
@@ -229,6 +265,7 @@ public class binarySearchTree {
         System.out.println(bst.height(bst.rootNode));
         System.out.println("MIN: " + bst.minNode(bst.rootNode) + "\n MAX: " + bst.maxNode(bst.rootNode));
         bst.printNodesAtDistance(bst.rootNode, 0);
+        System.out.println(bst.isBinarySearchTree());
 
     }
 }
