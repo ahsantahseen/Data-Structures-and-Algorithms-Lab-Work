@@ -167,7 +167,7 @@ public class binarySearchTree {
         }
     }
 
-    public int height(TreeNode rootNode) {
+    public int height(TreeNode rootNode) { // Find the height of the linked list
         if (rootNode == null) {
             return -1;
         } else if (rootNode.leftChild == null && rootNode.rightChild == null) {
@@ -176,8 +176,8 @@ public class binarySearchTree {
         return 1 + Math.max(height(rootNode.leftChild), height(rootNode.rightChild));
     }
 
-    public TreeNode minNode(TreeNode rootNode) {
-        if (rootNode == null) {
+    public TreeNode minNode(TreeNode rootNode) { // Find the min node of the tree
+        if (rootNode == null) { // if node not found
             throw new IllegalStateException();
         }
         var current = rootNode;
@@ -186,11 +186,11 @@ public class binarySearchTree {
             last = current;
             current = current.leftChild;
         }
-        return last;
+        return last;// return node if found
     }
 
-    public TreeNode maxNode(TreeNode rootNode) {
-        if (rootNode == null) {
+    public TreeNode maxNode(TreeNode rootNode) { //// Find the min node of the tree
+        if (rootNode == null) { // if node not found
             throw new IllegalStateException();
         }
         var current = rootNode;
@@ -199,10 +199,11 @@ public class binarySearchTree {
             last = current;
             current = current.rightChild;
         }
-        return last;
+        return last; // return node if found
     }
 
-    public void printNodesAtDistance(TreeNode rootNode, int distance) {
+    public void printNodesAtDistance(TreeNode rootNode, int distance) { // print node at an specific distnance for like
+                                                                        // print nodes at 0
         if (rootNode == null) {
             return;
         } else if (distance == 0) {
