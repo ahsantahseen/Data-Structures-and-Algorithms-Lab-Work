@@ -1,6 +1,9 @@
+import java.util.Arrays;
+
 public class MaxHeap {
     public static void heapify(int[] array) {
-        for (var i = 0; i < array.length; i++) {
+        var lastParentIndex = (array.length / 2) - 1;
+        for (var i = lastParentIndex; i >= 0; i--) {
             heapify(array, i);
         }
 
@@ -32,4 +35,9 @@ public class MaxHeap {
         heapify(array, largerIndex);
     }
 
+    public static void main(String[] args) {
+        int[] numbers = { 1, 3, 5, 23 };
+        MaxHeap.heapify(numbers);
+        System.out.println(Arrays.toString(numbers));
+    }
 }
