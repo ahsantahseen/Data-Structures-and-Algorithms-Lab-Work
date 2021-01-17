@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class heap {
 
     private int[] items = new int[10];
@@ -107,11 +109,37 @@ public class heap {
         return root;
     }
 
+    public void DescHeapSort() {
+        int[] numbers = { 3, 10, 2, 43, 5 };
+        var heap = new heap();
+        for (var number : numbers) {
+            heap.insert(number);
+        }
+        for (var i = 0; i < numbers.length; i++) {
+            numbers[i] = heap.remove();
+        }
+        System.out.println(Arrays.toString(numbers));
+    }
+
+    public void AsecHeapSort() {
+        int[] numbers = { 3, 10, 2, 43, 5 };
+        var heap = new heap();
+        for (var number : numbers) {
+            heap.insert(number);
+        }
+        for (var i = numbers.length - 1; i >= 0; i--) {
+            numbers[i] = heap.remove();
+        }
+        System.out.println(Arrays.toString(numbers));
+    }
+
     public static void main(String[] args) {
         heap heap = new heap();
         heap.insert(10);
         heap.insert(20);
         heap.insert(30);
         System.out.println(heap.remove());
+        heap.AsecHeapSort();
+        heap.DescHeapSort();
     }
 }
